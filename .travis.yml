@@ -24,19 +24,19 @@ jobs:
     - stage: tests
       name: "Unit Tests"
       script:
-      - cd Chapter06/users_backend
+      - cd chapter06/users_backend
       - docker-compose build db
       - docker-compose build test-postgresql
       - docker-compose run test-postgresql
     - stage: tests
       name: "Static Analysis"
       script:
-      - cd Chapter06/users_backend
+      - cd chapter06/users_backend
       - docker-compose build static-analysis
       - docker-compose run static-analysis
     - stage: push server
       script:
-      - cd Chapter06/users_backend
+      - cd chapter06/users_backend
       - docker-compose build server
       - docker tag users_server:latest dockercjj2003/users-backend:$GIT_SHA
       - docker push dockercjj2003/users-backend:$GIT_SHA
@@ -53,7 +53,7 @@ jobs:
   
     - stage: push server
       script:
-      - cd Chapter06/users_backend
+      - cd chapter06/users_backend
       - docker-compose build server
       - docker tag users_server:latest dockercjj2003/users-backend:$GIT_SHA
       - docker push dockercjj2003/users-backend:$GIT_SHA
@@ -70,7 +70,7 @@ jobs:
 
     - stage: push db
       script:
-      - cd Chapter06
+      - cd chapter06/users_backend
       - docker-compose build db
       - docker tag users_db:latest dockercjj2003/users-db:$GIT_SHA
       - docker push dockercjj2003/users-db:$GIT_SHA
