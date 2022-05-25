@@ -1,5 +1,5 @@
 import http.client
-from flask_restplus import Namespace, Resource, fields
+from flask_restx import Namespace, Resource, fields
 from datetime import datetime
 from users_backend.models import UserModel
 from users_backend.db import db
