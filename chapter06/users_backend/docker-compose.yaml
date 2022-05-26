@@ -44,6 +44,7 @@ services:
         entrypoint: flake8
 
     db:
+        image: users_db
         build:
             context: .
             dockerfile: ./docker/db/Dockerfile
